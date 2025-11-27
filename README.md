@@ -4,7 +4,7 @@ Landing page oficial da Begônia Arte e Presentes - cerâmica artesanal brasilei
 
 ## 🌐 Ver o Site
 
-Acesse: **https://netoribeiro.github.io/begonia**
+Acesse: **https://begonia-arte-em-presentes/landing-page**
 
 ## 📁 Estrutura de Arquivos
 
