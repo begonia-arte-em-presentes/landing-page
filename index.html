@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begônia Arte e Presentes | Cerâmica Artesanal Brasileira</title>
+    <meta name="description"
+        content="Peças exclusivas de cerâmica pintada à mão, feitas com a alma das artesãs brasileiras. Cada criação carrega história, técnica ancestral e amor pelo ofício.">
+    <meta property="og:title" content="Begônia Arte e Presentes">
+    <meta property="og:description" content="Cerâmica artesanal brasileira pintada à mão">
+    <meta property="og:image" content="images/logo.jpg">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            /* Logo colors */
+            --primary-red: #921211;
+            --primary-orange: #d4693c;
+
+            /* Updated palette */
+            --coral: #921211;
+            --coral-dark: #7a0f0e;
+            --terracotta: #d4693c;
+            --cream: #fcfffd;
+            --cream-dark: #f0f0f0;
+            --teal: #2D5A5A;
+            --teal-light: #3D7A7A;
+            --olive: #6B7D4A;
+            --olive-light: #8B9D6A;
+            --charcoal: #1a1a1a;
+            --brown-soft: #333333;
+            --gold-accent: #D4A44C;
+            --yellow-warm: #E8B84A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.025;
+            z-index: 1000;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(251, 248, 244, 0.98), rgba(251, 248, 244, 0));
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(251, 248, 244, 0.98);
+            box-shadow: 0 2px 20px rgba(61, 54, 48, 0.08);
+            padding: 0.75rem 4rem;
+        }
+
+        .logo {
+            height: 70px;
+            transition: height 0.3s ease;
+        }
+
+        nav.scrolled .logo {
+            height: 55px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+            padding: 1rem 0.5rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--coral);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 70%;
+            height: 140%;
+            background: linear-gradient(145deg, rgba(232, 93, 59, 0.06) 0%, rgba(45, 90, 90, 0.08) 40%, rgba(107, 125, 74, 0.05) 70%, transparent 100%);
+            border-radius: 50% 0 50% 50%;
+            transform: rotate(-15deg);
+        }
+
+        .deco-leaf {
+            position: absolute;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        .deco-leaf-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(ellipse at center, var(--teal) 0%, transparent 70%);
+            top: 15%;
+            right: 20%;
+            border-radius: 0 80% 0 80%;
+            transform: rotate(45deg);
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .deco-leaf-2 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(ellipse at center, var(--coral) 0%, transparent 70%);
+            bottom: 25%;
+            left: 5%;
+            border-radius: 80% 0 80% 0;
+            transform: rotate(-30deg);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(45deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(50deg);
+            }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(135deg, var(--teal), var(--teal-light));
+            color: white;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border-radius: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--coral);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--brown-soft);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            line-height: 1.8;
+        }
+
+        .cta-group {
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            height: 550px;
+            border-radius: 200px 200px 30px 30px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(61, 54, 48, 0.2);
+        }
+
+        .hero-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image-main:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-accent-card {
+            position: absolute;
+            bottom: 60px;
+            left: -60px;
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(61, 54, 48, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: floatCard 5s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .accent-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--olive), var(--olive-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .accent-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        .accent-text strong {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--charcoal);
+        }
+
+        .accent-text span {
+            font-size: 0.8rem;
+            color: var(--brown-soft);
+            letter-spacing: 0.05em;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-tag::before,
+        .section-tag::after {
+            content: '—';
+            margin: 0 0.75rem;
+            opacity: 0.5;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--brown-soft);
+            font-size: 1.1rem;
+        }
+
+        /* Destaque */
+        .destaque {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .destaque::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--teal), transparent);
+        }
+
+        .destaque-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .destaque-image {
+            position: relative;
+        }
+
+        .destaque-image-main {
+            width: 100%;
+            height: 600px;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(61, 54, 48, 0.15);
+        }
+
+        .destaque-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .destaque-image-main:hover img {
+            transform: scale(1.03);
+        }
+
+        .destaque-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gold-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(212, 164, 76, 0.4);
+        }
+
+        .destaque-info h3 {
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .destaque-code {
+            font-size: 0.85rem;
+            color: var(--teal);
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .destaque-description {
+            font-size: 1.2rem;
+            color: var(--brown-soft);
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .destaque-story {
+            padding: 2rem;
+            background: var(--cream);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--teal);
+        }
+
+        .destaque-story h4 {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .destaque-story p {
+            color: var(--brown-soft);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: linear-gradient(135deg, var(--teal), #1D4A4A);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .video-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-section .section-tag {
+            color: var(--yellow-warm);
+        }
+
+        .video-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .video-section .subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--brown-soft), var(--charcoal));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-button {
+            width: 100px;
+            height: 100px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(232, 93, 59, 0.4);
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: var(--coral-dark);
+        }
+
+        .play-button svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+            margin-left: 5px;
+        }
+
+        /* Vitrine */
+        .vitrine {
+            background: var(--cream);
+        }
+
+        .produtos-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .produto-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(61, 54, 48, 0.18);
+        }
+
+        .produto-image {
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .produto-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .produto-card:hover .produto-image img {
+            transform: scale(1.08);
+        }
+
+        .produto-info {
+            padding: 1.5rem;
+        }
+
+        .produto-info h3 {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .produto-info .codigo {
+            font-size: 0.8rem;
+            color: var(--teal);
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+
+        .produto-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(45, 90, 90, 0.95), rgba(45, 90, 90, 0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .produto-card:hover .produto-overlay {
+            opacity: 1;
+        }
+
+        .produto-overlay span {
+            color: white;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 2px solid white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .produto-overlay span:hover {
+            background: white;
+            color: var(--teal);
+        }
+
+        .vitrine-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        /* Artesãs */
+        .artesas {
+            background: white;
+            position: relative;
+        }
+
+        .artesas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(232, 93, 59, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .artesas-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .artesa-card {
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+
+        .artesa-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .artesa-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem;
+            border: 4px solid white;
+            box-shadow: 0 15px 40px rgba(61, 54, 48, 0.15);
+            position: relative;
+            background: linear-gradient(135deg, var(--coral), var(--terracotta));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .artesa-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .artesa-image svg {
+            width: 60px;
+            height: 60px;
+            stroke: rgba(255, 255, 255, 0.7);
+        }
+
+        .artesa-card h4 {
+            font-size: 1.4rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .artesa-card span {
+            font-size: 0.85rem;
+            color: var(--brown-soft);
+        }
+
+        /* Contato */
+        .contato {
+            background: linear-gradient(135deg, var(--charcoal), #2A2420);
+            color: white;
+            text-align: center;
+        }
+
+        .contato h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contato-subtitle {
+            color: var(--terracotta);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contato-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contato-item {
+            text-align: center;
+        }
+
+        .contato-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--coral), var(--coral-dark));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: 0 10px 25px rgba(232, 93, 59, 0.3);
+        }
+
+        .contato-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: white;
+        }
+
+        .contato-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contato-item p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contato-item a {
+            color: var(--yellow-warm);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contato-item a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .social-link {
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--coral);
+            transform: translateY(-4px);
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .whatsapp-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: #25D366;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-cta:hover {
+            background: #128C7E;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-cta svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #1A1614;
+            padding: 2rem 4rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--coral);
+            text-decoration: none;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--charcoal);
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 0 2rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                margin: 0 auto 2rem;
+            }
+
+            .cta-group {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .hero-image-main {
+                height: 450px;
+            }
+
+            .hero-accent-card {
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 40px;
+            }
+
+            @keyframes floatCard {
+
+                0%,
+                100% {
+                    transform: translateX(-50%) translateY(0);
+                }
+
+                50% {
+                    transform: translateX(-50%) translateY(-10px);
+                }
+            }
+
+            .destaque-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .destaque-image-main {
+                height: 450px;
+            }
+
+            .produtos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 4rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero-image-main {
+                height: 380px;
+                border-radius: 100px 100px 20px 20px;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .produtos-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .produto-image {
+                height: 280px;
+            }
+
+            .contato-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .artesas-grid {
+                gap: 2rem;
+            }
+
+            .artesa-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .destaque-info h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <img src="images/logo.jpg" alt="Begônia Arte em Presentes" class="logo">
+        <ul class="nav-links">
+            <li><a href="#destaque">Destaque</a></li>
+            <li><a href="#video">Nossa História</a></li>
+            <li><a href="#vitrine">Produtos</a></li>
+            <li><a href="#artesas">Artesãs</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="deco-leaf deco-leaf-1"></div>
+            <div class="deco-leaf deco-leaf-2"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">🌺 Cerâmica Artesanal Brasileira</span>
+                <h1>Onde a Tradição Artesanal Encontra <span>Seu Lar</span></h1>
+                <p class="hero-subtitle">Peças exclusivas de cerâmica pintada à mão, feitas com a alma das artesãs
+                    brasileiras. Cada criação carrega história, técnica ancestral e amor pelo ofício.</p>
+                <div class="cta-group">
+                    <a href="#vitrine" class="btn-primary">
+                        Explore Nossas Coleções
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#contato" class="btn-secondary">Fale Conosco</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="hero-image-main">
+                    <img src="images/hero.jpg" alt="Prato de cerâmica pintado à mão com motivos florais">
+                </div>
+                <div class="hero-accent-card">
+                    <div class="accent-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                    </div>
+                    <div class="accent-text">
+                        <strong>100% Feito à Mão</strong>
+                        <span>Com carinho e dedicação</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaque do Mês -->
+    <section class="destaque" id="destaque">
+        <div class="section-header">
+            <span class="section-tag">Especial</span>
+            <h2>✨ Destaque do Mês</h2>
+            <p>Uma peça única que conta uma história especial</p>
+        </div>
+
+        <div class="destaque-content">
+            <div class="destaque-image">
+                <div class="destaque-image-main">
+                    <span class="destaque-badge">★ Destaque</span>
+                    <img src="images/destaque.jpg" alt="Conjunto Tajine com Descanso de Colher">
+                </div>
+            </div>
+
+            <div class="destaque-info">
+                <span class="destaque-code">BAP-DM-001</span>
+                <h3>Conjunto Tajine Botânico</h3>
+                <p class="destaque-description">"A fusão perfeita entre a tradição marroquina e o traço brasileiro,
+                    pintado à mão com motivos de folhagens."</p>
+
+                <div class="destaque-story">
+                    <h4>📖 A História Por Trás da Peça</h4>
+                    <p>Este conjunto único foi criado por nossas artesãs inspiradas nas formas tradicionais do tajine
+                        marroquino, mas com a alma brasileira nos traços. Cada folha e cada curva é pintada à mão com
+                        esmalte cerâmico de alta qualidade. O processo leva cerca de uma semana, desde a modelagem da
+                        argila até a queima final, garantindo uma peça que atravessa gerações.</p>
+                </div>
+
+                <a href="#contato" class="btn-primary">
+                    Quero Este Presente Único
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" id="video">
+        <div class="video-content">
+            <span class="section-tag">Nossa Essência</span>
+            <h2>Conheça o Coração da Begônia</h2>
+            <p class="subtitle">Um tour pelo nosso ateliê, o processo de criação e o amor que colocamos em cada peça.
+            </p>
+
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <div class="play-button">
+                        <svg viewBox="0 0 24 24">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                    </div>
+                    <span style="color: white; opacity: 0.8; font-size: 1rem;">Clique para assistir</span>
+                    <span style="color: white; opacity: 0.5; font-size: 0.8rem; margin-top: 0.5rem;">Em breve: vídeo do
+                        ateliê</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vitrine de Produtos -->
+    <section class="vitrine" id="vitrine">
+        <div class="section-header">
+            <span class="section-tag">Coleção</span>
+            <h2>🛍️ Nossas Escolhas Mais Amadas</h2>
+            <p>Peças selecionadas que conquistaram os corações dos nossos clientes</p>
+        </div>
+
+        <div class="produtos-grid">
+            <div class="produto-card">
+                <div class="produto-image">
+                    <img src="images/produto-1.jpg" alt="Conjunto de cerâmicas com folhas azuis e oliveiras">
+                </div>
+                <div class="produto-info">
+                    <h3>Coleção Oliveira</h3>
+                    <span class="codigo">BAP-002</span>
+                </div>
+                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+            </div>
+
+            <div class="produto-card">
+                <div class="produto-image">
+                    <img src="images/produto-2.jpg" alt="Descansos de colher pintados à mão">
+                </div>
+                <div class="produto-info">
+                    <h3>Descansos de Colher</h3>
+                    <span class="codigo">BAP-003</span>
+                </div>
+                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+            </div>
+
+            <div class="produto-card">
+                <div class="produto-image">
+                    <img src="images/produto-3.jpg" alt="Prato e bowl com rosas em espiral">
+                </div>
+                <div class="produto-info">
+                    <h3>Conjunto Rosas</h3>
+                    <span class="codigo">BAP-004</span>
+                </div>
+                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+            </div>
+
+            <div class="produto-card">
+                <div class="produto-image">
+                    <img src="images/produto-4.jpg" alt="Tábua de servir com folhagens">
+                </div>
+                <div class="produto-info">
+                    <h3>Tábua Folhagens</h3>
+                    <span class="codigo">BAP-005</span>
+                </div>
+                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+            </div>
+
+            <div class="produto-card">
+                <div class="produto-image">
+                    <img src="images/produto-5.jpg" alt="Bowls com ramos vermelhos">
+                </div>
+                <div class="produto-info">
+                    <h3>Bowls Ramos Vermelhos</h3>
+                    <span class="codigo">BAP-006</span>
+                </div>
+                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+            </div>
+
+            <div class="produto-card">
+                <div class="produto-image">
+                    <img src="images/produto-6.jpg" alt="Travessa orgânica com flores">
+                </div>
+                <div class="produto-info">
+                    <h3>Travessa Floral</h3>
+                    <span class="codigo">BAP-007</span>
+                </div>
+                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+            </div>
+        </div>
+
+        <div class="vitrine-cta">
+            <a href="#contato" class="btn-primary">
+                Ver Todos os Produtos
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Artesãs -->
+    <section class="artesas" id="artesas">
+        <div class="section-header">
+            <span class="section-tag">Nossas Mãos</span>
+            <h2>🧑‍🎨 Quem Faz Nossa Arte Acontecer</h2>
+            <p>Conheça as artesãs por trás de cada peça única</p>
+        </div>
+
+        <div class="artesas-grid">
+            <a href="artesa-leila.html" class="artesa-card">
+                <div class="artesa-image">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M20 21a8 8 0 0 0-16 0" />
+                    </svg>
+                </div>
+                <h4>Leila Pucci</h4>
+                <span>Pintura em Cerâmica</span>
+            </a>
+
+            <a href="artesa-estela.html" class="artesa-card">
+                <div class="artesa-image" style="background: linear-gradient(135deg, var(--teal), var(--teal-light));">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M20 21a8 8 0 0 0-16 0" />
+                    </svg>
+                </div>
+                <h4>Estela</h4>
+                <span>Modelagem</span>
+            </a>
+
+            <a href="artesa-susi.html" class="artesa-card">
+                <div class="artesa-image"
+                    style="background: linear-gradient(135deg, var(--olive), var(--olive-light));">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M20 21a8 8 0 0 0-16 0" />
+                    </svg>
+                </div>
+                <h4>Susi</h4>
+                <span>Arte em Barro</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato" id="contato">
+        <h2>📞 Fale Conosco</h2>
+        <p class="contato-subtitle">Entregamos para Todo o Brasil com Carinho</p>
+
+        <div class="contato-grid">
+            <div class="contato-item">
+                <div class="contato-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                </div>
+                <h4>Tele Vendas</h4>
+                <a href="tel:+5511996898711">11 99689-8711</a>
+            </div>
+
+            <div class="contato-item">
+                <div class="contato-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                </div>
+                <h4>Entrega</h4>
+                <p>Pronta Entrega para Todo Brasil</p>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://instagram.com/begonia.arte" class="social-link" aria-label="Instagram" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2" fill="none" />
+                    <circle cx="12" cy="12" r="4" stroke="white" stroke-width="2" fill="none" />
+                    <circle cx="17.5" cy="6.5" r="1.5" fill="white" />
+                </svg>
+            </a>
+            <a href="https://facebook.com/begonia.arte" class="social-link" aria-label="Facebook" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+            </a>
+        </div>
+
+        <a href="https://wa.me/5511996898711" class="whatsapp-cta" target="_blank">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Pronta Entrega! Chame no WhatsApp
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Begônia Arte em Presentes. Todos os direitos reservados. Feito com 🧡 no Brasil.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('section:not(.hero)').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
