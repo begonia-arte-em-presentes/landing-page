@@ -273,7 +273,61 @@
         }
 
         .cta-group {
+            display: flex;
+            gap: 1.5rem;
             animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* Buttons */
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--coral), var(--coral-dark));
+            color: white;
+            box-shadow: 0 10px 30px rgba(146, 18, 17, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--coral-dark), var(--coral));
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(146, 18, 17, 0.4);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(4px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--charcoal);
+            border-color: var(--cream-dark);
+            box-shadow: 0 4px 15px rgba(61, 54, 48, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: var(--teal);
+            color: white;
+            border-color: var(--teal);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(45, 90, 90, 0.3);
         }
 
         .hero-image-main {
@@ -668,7 +722,7 @@
             opacity: 1;
         }
 
-        .produto-overlay span {
+        .produto-overlay a {
             color: white;
             font-size: 0.85rem;
             letter-spacing: 0.1em;
@@ -677,9 +731,11 @@
             padding: 1rem 2rem;
             border-radius: 30px;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .produto-overlay span:hover {
+        .produto-overlay a:hover {
             background: white;
             color: var(--teal);
         }
@@ -1181,7 +1237,7 @@
         </div>
 
         <div class="produtos-grid">
-            <div class="produto-card">
+            <div class="produto-card" data-produto="BAP-002">
                 <div class="produto-image">
                     <img src="images/produto-1.jpg" alt="Conjunto de cerâmicas com folhas azuis e oliveiras">
                 </div>
@@ -1189,10 +1245,10 @@
                     <h3>Coleção Oliveira</h3>
                     <span class="codigo">BAP-002</span>
                 </div>
-                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-002">Ver Detalhes</a></div>
             </div>
 
-            <div class="produto-card">
+            <div class="produto-card" data-produto="BAP-003">
                 <div class="produto-image">
                     <img src="images/produto-2.jpg" alt="Descansos de colher pintados à mão">
                 </div>
@@ -1200,10 +1256,10 @@
                     <h3>Descansos de Colher</h3>
                     <span class="codigo">BAP-003</span>
                 </div>
-                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-003">Ver Detalhes</a></div>
             </div>
 
-            <div class="produto-card">
+            <div class="produto-card" data-produto="BAP-004">
                 <div class="produto-image">
                     <img src="images/produto-3.jpg" alt="Prato e bowl com rosas em espiral">
                 </div>
@@ -1211,10 +1267,10 @@
                     <h3>Conjunto Rosas</h3>
                     <span class="codigo">BAP-004</span>
                 </div>
-                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-004">Ver Detalhes</a></div>
             </div>
 
-            <div class="produto-card">
+            <div class="produto-card" data-produto="BAP-005">
                 <div class="produto-image">
                     <img src="images/produto-4.jpg" alt="Tábua de servir com folhagens">
                 </div>
@@ -1222,10 +1278,10 @@
                     <h3>Tábua Folhagens</h3>
                     <span class="codigo">BAP-005</span>
                 </div>
-                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-005">Ver Detalhes</a></div>
             </div>
 
-            <div class="produto-card">
+            <div class="produto-card" data-produto="BAP-006">
                 <div class="produto-image">
                     <img src="images/produto-5.jpg" alt="Bowls com ramos vermelhos">
                 </div>
@@ -1233,10 +1289,10 @@
                     <h3>Bowls Ramos Vermelhos</h3>
                     <span class="codigo">BAP-006</span>
                 </div>
-                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-006">Ver Detalhes</a></div>
             </div>
 
-            <div class="produto-card">
+            <div class="produto-card" data-produto="BAP-007">
                 <div class="produto-image">
                     <img src="images/produto-6.jpg" alt="Travessa orgânica com flores">
                 </div>
@@ -1244,7 +1300,7 @@
                     <h3>Travessa Floral</h3>
                     <span class="codigo">BAP-007</span>
                 </div>
-                <div class="produto-overlay"><span>Ver Detalhes</span></div>
+                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-007">Ver Detalhes</a></div>
             </div>
         </div>
 
