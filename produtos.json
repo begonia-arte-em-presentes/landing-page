@@ -1,0 +1,99 @@
+{
+  "destaque": {
+    "code": "BAP-DM-001",
+    "title": "Conjunto Tajine Botânico",
+    "shortDescription": "A fusão perfeita entre a tradição marroquina e o traço brasileiro, pintado à mão com motivos de folhagens.",
+    "longDescription": "Este conjunto único foi criado por nossas artesãs inspiradas nas formas tradicionais do tajine marroquino, mas com a alma brasileira nos traços. Cada folha e cada curva é pintada à mão com esmalte cerâmico de alta qualidade.\n\nO processo leva cerca de uma semana, desde a modelagem da argila até a queima final, garantindo uma peça que atravessa gerações. Cada detalhe é cuidadosamente pensado para criar uma harmonia visual única.\n\nPerfeito para ocasiões especiais ou como peça decorativa, este conjunto traz sofisticação e história para qualquer ambiente.",
+    "badge": "★ Destaque",
+    "featured": true,
+    "images": [
+      "destaque.jpg",
+      "destaque_1.jpg",
+      "destaque_2.jpg"
+    ]
+  },
+  "produtos": [
+    {
+      "code": "BAP-002",
+      "title": "Coleção Oliveira",
+      "shortDescription": "Conjunto de cerâmicas com folhas azuis e oliveiras, pintado à mão com técnicas tradicionais brasileiras.",
+      "longDescription": "Cada peça desta coleção é cuidadosamente pintada à mão por nossas artesãs brasileiras, utilizando técnicas ancestrais transmitidas de geração em geração. O processo de criação leva dias, desde a modelagem da argila até a queima final, garantindo uma peça única e durável.\n\nAs folhas de oliveira representam paz e prosperidade, trazendo um significado especial para sua casa. Os tons de azul e verde criam uma harmonia visual que complementa qualquer ambiente.\n\nFeita com cerâmica de alta qualidade e esmaltes atóxicos, esta peça não é apenas decorativa, mas também funcional, podendo ser utilizada no dia a dia com segurança.",
+      "badge": "✨ Popular",
+      "featured": false,
+      "images": [
+        "produto-1.jpg"
+      ]
+    },
+    {
+      "code": "BAP-003",
+      "title": "Descansos de Colher",
+      "shortDescription": "Descansos de colher pintados à mão com motivos florais delicados e cores vibrantes.",
+      "longDescription": "Estes encantadores descansos de colher são perfeitos para adicionar um toque artesanal à sua cozinha. Cada peça é única, pintada à mão com motivos florais que celebram a natureza brasileira.\n\nAlém de funcionais, estes descansos são verdadeiras obras de arte que transformam sua mesa em um espaço mais acolhedor e especial. Podem ser usados diariamente ou em ocasiões especiais.\n\nProduzidos com cerâmica de alta qualidade, são resistentes e fáceis de limpar, mantendo suas cores vibrantes por muitos anos.",
+      "badge": "🌟 Novo",
+      "featured": false,
+      "images": [
+        "produto-2.jpg"
+      ]
+    },
+    {
+      "code": "BAP-004",
+      "title": "Conjunto Rosas",
+      "shortDescription": "Prato e bowl com rosas em espiral, uma celebração da beleza e delicadeza das flores.",
+      "longDescription": "Este conjunto exclusivo apresenta rosas pintadas em espiral, criando um efeito visual hipnotizante e elegante. Cada rosa é cuidadosamente desenhada à mão, com atenção aos mínimos detalhes.\n\nPerfeito para servir refeições especiais ou como peça decorativa, este conjunto traz sofisticação e charme para qualquer ocasião. As cores suaves e harmoniosas criam uma atmosfera de tranquilidade e beleza.\n\nFeito com cerâmica premium e acabamento impecável, este conjunto é um investimento em arte e qualidade que durará gerações.",
+      "badge": "💝 Exclusivo",
+      "featured": false,
+      "images": [
+        "produto-3.jpg"
+      ]
+    },
+    {
+      "code": "BAP-005",
+      "title": "Tábua Folhagens",
+      "shortDescription": "Tábua de servir com folhagens pintadas à mão, ideal para apresentações elegantes.",
+      "longDescription": "Esta tábua de servir é uma verdadeira obra de arte funcional. As folhagens pintadas à mão criam um padrão orgânico e natural que celebra a flora brasileira.\n\nIdeal para servir queijos, frios, frutas ou como peça decorativa na sua cozinha. Cada folha é pintada com precisão e cuidado, criando uma composição harmoniosa e equilibrada.\n\nA cerâmica de alta qualidade garante durabilidade e facilidade de limpeza, enquanto o design atemporal assegura que esta peça nunca sairá de moda.",
+      "badge": "✨ Popular",
+      "featured": false,
+      "images": [
+        "produto-4.jpg"
+      ]
+    },
+    {
+      "code": "BAP-006",
+      "title": "Bowls Ramos Vermelhos",
+      "shortDescription": "Bowls decorados com ramos vermelhos vibrantes, trazendo energia e vida para sua mesa.",
+      "longDescription": "Estes bowls impressionantes apresentam ramos vermelhos pintados à mão que trazem energia e vitalidade para qualquer ambiente. O vermelho vibrante contrasta lindamente com o fundo claro da cerâmica.\n\nPerfeitos para servir sopas, saladas, cereais ou como peças decorativas. O design ousado e moderno se adapta tanto a ambientes contemporâneos quanto tradicionais.\n\nCada bowl é uma peça única, com variações naturais que tornam sua coleção ainda mais especial. Feitos com cerâmica de primeira qualidade e esmaltes duráveis.",
+      "badge": "🌟 Novo",
+      "featured": false,
+      "images": [
+        "produto-5.jpg"
+      ]
+    },
+    {
+      "code": "BAP-007",
+      "title": "Travessa Floral",
+      "shortDescription": "Travessa orgânica com flores delicadas, perfeita para ocasiões especiais.",
+      "longDescription": "Esta travessa de formato orgânico é adornada com flores delicadas pintadas à mão, criando uma peça verdadeiramente especial. O design fluido e natural complementa qualquer estilo de decoração.\n\nIdeal para servir entradas, acompanhamentos ou como centro de mesa decorativo. As flores pintadas com maestria trazem um toque de elegância e sofisticação.\n\nProduzida com cerâmica de alta qualidade, esta travessa combina beleza estética com funcionalidade prática, sendo resistente e fácil de manter.",
+      "badge": "💝 Exclusivo",
+      "featured": false,
+      "images": [
+        "produto-6.jpg"
+      ]
+    },
+    {
+      "code": "503384716",
+      "title": "Leiteira Floral",
+      "shortDescription": "Leiteira orgânica com flores delicadas, perfeita para ocasiões especiais.",
+      "longDescription": "Esta leiteira de formato orgânico é adornada com flores delicadas pintadas à mão, criando uma peça verdadeiramente especial. O design fluido e natural complementa qualquer estilo de decoração.\n\nIdeal para servir entradas, acompanhamentos ou como centro de mesa decorativo. As flores pintadas com maestria trazem um toque de elegância e sofisticação.\n\nProduzida com cerâmica de alta qualidade, esta leiteira combina beleza estética com funcionalidade prática, sendo resistente e fácil de manter.",
+      "badge": "💝 Exclusivo",
+      "featured": false,
+      "images": [
+        "503384716.jpg",
+        "503384716_1.jpg",
+        "503384716_2.jpg",
+        "503384716_3.jpg",
+        "503384716_4.jpg",
+        "503384716_5.jpg"
+      ]
+    }
+  ]
+}

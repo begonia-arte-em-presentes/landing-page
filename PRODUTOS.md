@@ -149,11 +149,45 @@ Após fazer alterações:
 4. Verifique se todas as imagens carregam corretamente
 5. Teste a galeria de imagens clicando nas miniaturas
 
-### 8. Estrutura de Arquivos
+### 8. Página de Todos os Produtos (`produtos.html`)
+
+A página `produtos.html` exibe todos os produtos com paginação automática (6 produtos por página).
+
+#### Como Adicionar Produtos à Página de Todos os Produtos
+
+1. Abra o arquivo `produtos.html`
+2. Localize o array `allProducts` no JavaScript
+3. Adicione novos produtos seguindo o formato:
+
+```javascript
+{
+    code: 'BAP-008',
+    title: 'Nome do Produto',
+    image: 'images/produto-8.jpg',
+    badge: '✨ Popular'  // Opcional: '🌟 Novo', '💝 Exclusivo', etc.
+}
+```
+
+#### Badges Disponíveis
+
+- `'✨ Popular'` - Para produtos mais vendidos
+- `'🌟 Novo'` - Para lançamentos
+- `'💝 Exclusivo'` - Para peças únicas
+- Ou crie seus próprios badges personalizados
+
+#### Paginação Automática
+
+- A página carrega **6 produtos por vez**
+- A paginação é calculada automaticamente
+- Navegação por teclado: use as setas ← → para navegar entre páginas
+- Os produtos aparecem com animação suave ao carregar
+
+### 9. Estrutura de Arquivos
 
 ```
 landing-page/
 ├── index.html          # Página principal com grid de produtos
+├── produtos.html       # Página com todos os produtos (paginação)
 ├── detalhes.html       # Página de detalhes do produto
 ├── images/             # Pasta com todas as imagens
 │   ├── logo.jpg
