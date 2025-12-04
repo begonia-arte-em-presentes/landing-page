@@ -1,0 +1,37 @@
+{
+  "artesas": [
+    {
+      "id": "leila",
+      "nome": "Leila Pucci",
+      "especialidade": "Pintura em Cerâmica",
+      "foto": "leila.jpg",
+      "quote": "Transformo barro em poesia — cada peça nasce das minhas mãos, mas ganha vida nas histórias de quem a acolhe.",
+      "bio1": "Desde pequena, sempre encontrei um refúgio nas coisas feitas à mão. A cerâmica chegou para mim como um encontro — desses que transformam a vida. Comecei como curiosidade, depois virou terapia, e quando percebi… já era paixão. O barro me escolheu antes mesmo que eu soubesse escolher um caminho.\n\nCriar com as mãos me devolveu para mim mesma, para minha essência. A cada peça, descobri que não estava apenas modelando argila — estava moldando também uma nova versão da minha história.",
+      "bio2": "Meu processo mistura técnica tradicional brasileira, pintura manual e uma forte inspiração na natureza — nos ramos, flores, folhas e curvas orgânicas que fazem parte do universo Begônia. Trabalho com modelagem à mão, escultura livre e pintura em pincel fino, sempre respeitando o tempo da cerâmica: secar, lapidar, pintar, queimar…\n\nAcredito em peças únicas, com identidade, que carregam pequenas imperfeições que as tornam ainda mais humanas. Assim como acontece nas coleções da Begônia, onde cada detalhe é pintado com intenção e cuidado.",
+      "bio3": "A Begônia não é apenas minha loja — é o meu lar artístico.\nÉ o lugar onde minhas mãos encontram liberdade e onde minhas ideias ganham forma. Aqui, construí mais do que um negócio: construí uma família criativa.\n\nA Begônia representa acolhimento, crescimento e a certeza de que a arte feita com amor alcança pessoas. Cada peça vendida, cada encomenda entregue, cada cliente encantado… tudo isso me faz sentir que estou exatamente onde deveria estar.\n\nÉ minha raiz e meu florescer.",
+      "galeria": []
+    },
+    {
+      "id": "estela",
+      "nome": "Estela",
+      "especialidade": "Modelagem",
+      "foto": "estela.jpg",
+      "quote": "Cada pincelada carrega um pedaço da minha alma e do amor que tenho pela arte.",
+      "bio1": "",
+      "bio2": "",
+      "bio3": "",
+      "galeria": []
+    },
+    {
+      "id": "susi",
+      "nome": "Susi",
+      "especialidade": "Arte em Barro",
+      "foto": "susi.jpg",
+      "quote": "Cada pincelada carrega um pedaço da minha alma e do amor que tenho pela arte.",
+      "bio1": "",
+      "bio2": "",
+      "bio3": "",
+      "galeria": []
+    }
+  ]
+}

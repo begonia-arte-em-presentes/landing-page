@@ -22,542 +22,168 @@
             --brown-soft: #6B5B4F;
             --gold-accent: #D4A44C;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Jost', sans-serif;
-            background-color: var(--cream);
-            color: var(--charcoal);
-            line-height: 1.7;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            padding: 1rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(251, 248, 244, 0.98);
-            box-shadow: 0 2px 20px rgba(61, 54, 48, 0.08);
-        }
-
+        body { font-family: 'Jost', sans-serif; background-color: var(--cream); color: var(--charcoal); line-height: 1.7; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+        nav { position: fixed; top: 0; left: 0; right: 0; padding: 1rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: rgba(251, 248, 244, 0.98); box-shadow: 0 2px 20px rgba(61, 54, 48, 0.08); }
         .logo { height: 55px; }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--charcoal);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--charcoal); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease; }
         .back-link:hover { color: var(--coral); }
         .back-link svg { width: 20px; height: 20px; }
-
-        /* Hero */
-        .artesa-hero {
-            padding-top: 120px;
-            padding-bottom: 4rem;
-            background: linear-gradient(180deg, white 0%, var(--cream) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .artesa-hero::before {
-            content: '';
-            position: absolute;
-            top: 100px; right: -100px;
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(232, 93, 59, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .artesa-hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 4rem;
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 4rem;
-            align-items: start;
-            position: relative;
-            z-index: 1;
-        }
-
+        .artesa-hero { padding-top: 120px; padding-bottom: 4rem; background: linear-gradient(180deg, white 0%, var(--cream) 100%); position: relative; overflow: hidden; }
+        .artesa-hero::before { content: ''; position: absolute; top: 100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(232, 93, 59, 0.08) 0%, transparent 70%); border-radius: 50%; }
+        .artesa-hero-content { max-width: 1200px; margin: 0 auto; padding: 0 4rem; display: grid; grid-template-columns: 400px 1fr; gap: 4rem; align-items: start; position: relative; z-index: 1; }
         .artesa-photo-container { position: relative; }
-
-        .artesa-photo {
-            width: 100%;
-            height: 500px;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(61, 54, 48, 0.15);
-            background: linear-gradient(135deg, var(--coral), var(--terracotta));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .artesa-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .artesa-photo svg {
-            width: 150px;
-            height: 150px;
-            stroke: rgba(255,255,255,0.5);
-        }
-
-        .artesa-photo-container::after {
-            content: '';
-            position: absolute;
-            bottom: -20px; right: -20px;
-            width: 200px; height: 200px;
-            border: 3px solid var(--coral);
-            border-radius: 30px;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
+        .artesa-photo { width: 100%; height: 500px; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 60px rgba(61, 54, 48, 0.15); background: linear-gradient(135deg, var(--coral), var(--terracotta)); display: flex; align-items: center; justify-content: center; }
+        .artesa-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .artesa-photo svg { width: 150px; height: 150px; stroke: rgba(255,255,255,0.5); }
+        .artesa-photo-container::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 200px; height: 200px; border: 3px solid var(--coral); border-radius: 30px; z-index: -1; opacity: 0.3; }
         .artesa-info { padding-top: 2rem; }
-
-        .artesa-badge {
-            display: inline-block;
-            padding: 0.6rem 1.5rem;
-            background: var(--coral);
-            color: white;
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            border-radius: 30px;
-            margin-bottom: 1.5rem;
-        }
-
-        .artesa-info h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            color: var(--charcoal);
-            margin-bottom: 0.5rem;
-        }
-
-        .artesa-specialty {
-            font-size: 1.3rem;
-            color: var(--coral);
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .artesa-quote {
-            padding: 2rem;
-            background: white;
-            border-radius: 20px;
-            border-left: 4px solid var(--gold-accent);
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(61, 54, 48, 0.08);
-        }
-
-        .artesa-quote p {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--charcoal);
-            line-height: 1.6;
-        }
-
-        .artesa-quote cite {
-            display: block;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: var(--brown-soft);
-            font-style: normal;
-        }
-
-        /* Biography */
-        .biografia {
-            padding: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        .artesa-badge { display: inline-block; padding: 0.6rem 1.5rem; background: var(--coral); color: white; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 30px; margin-bottom: 1.5rem; }
+        .artesa-info h1 { font-size: 3.5rem; line-height: 1.1; color: var(--charcoal); margin-bottom: 0.5rem; }
+        .artesa-specialty { font-size: 1.3rem; color: var(--coral); margin-bottom: 2rem; font-style: italic; }
+        .artesa-quote { padding: 2rem; background: white; border-radius: 20px; border-left: 4px solid var(--gold-accent); margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(61, 54, 48, 0.08); }
+        .artesa-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; color: var(--charcoal); line-height: 1.6; }
+        .artesa-quote cite { display: block; margin-top: 1rem; font-size: 0.9rem; color: var(--brown-soft); font-style: normal; }
+        .biografia { padding: 4rem; max-width: 1200px; margin: 0 auto; }
         .biografia-section { margin-bottom: 3rem; }
-
-        .biografia-section h2 {
-            font-size: 2rem;
-            color: var(--charcoal);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .biografia-section h2 .icon {
-            width: 50px; height: 50px;
-            background: linear-gradient(135deg, var(--coral), var(--terracotta));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .biografia-section h2 svg {
-            width: 24px; height: 24px;
-            stroke: white;
-        }
-
-        .biografia-section p {
-            font-size: 1.1rem;
-            color: var(--brown-soft);
-            line-height: 1.9;
-            max-width: 800px;
-        }
-
-        .biografia-placeholder {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 2px dashed var(--coral);
-            text-align: center;
-        }
-
-        .biografia-placeholder p {
-            color: var(--brown-soft);
-            font-style: italic;
-            margin: 0 auto;
-        }
-
-        /* Gallery */
-        .galeria {
-            padding: 4rem;
-            background: white;
-        }
-
-        .galeria-header {
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-            text-align: center;
-        }
-
-        .galeria-header h2 {
-            font-size: 2.5rem;
-            color: var(--charcoal);
-            margin-bottom: 0.5rem;
-        }
-
-        .galeria-header p {
-            color: var(--brown-soft);
-            font-size: 1.1rem;
-        }
-
-        .galeria-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .galeria-item {
-            background: var(--cream);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            cursor: pointer;
-        }
-
-        .galeria-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(61, 54, 48, 0.15);
-        }
-
-        .galeria-image {
-            height: 280px;
-            overflow: hidden;
-        }
-
-        .galeria-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .galeria-item:hover .galeria-image img {
-            transform: scale(1.05);
-        }
-
-        .galeria-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--terracotta), var(--coral));
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .galeria-placeholder svg {
-            width: 50px; height: 50px;
-            stroke: rgba(255,255,255,0.5);
-            margin-bottom: 0.5rem;
-        }
-
-        .galeria-placeholder span {
-            color: white;
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
-
-        .galeria-info { padding: 1.5rem; }
-
-        .galeria-info h3 {
-            font-size: 1.2rem;
-            color: var(--charcoal);
-            margin-bottom: 0.25rem;
-        }
-
-        .galeria-info .codigo {
-            font-size: 0.8rem;
-            color: var(--teal);
-            letter-spacing: 0.1em;
-        }
-
-        /* CTA */
-        .cta-section {
-            padding: 4rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--charcoal), #2A2420);
-            color: white;
-        }
-
-        .cta-section h2 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            background: #25D366;
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            background: #128C7E;
-            transform: translateY(-4px);
-        }
-
+        .biografia-section h2 { font-size: 2rem; color: var(--charcoal); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+        .biografia-section h2 .icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--coral), var(--terracotta)); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .biografia-section h2 .icon svg { width: 24px; height: 24px; stroke: white; }
+        .biografia-section p, .biografia-placeholder p { font-size: 1.1rem; color: var(--brown-soft); line-height: 1.8; }
+        .biografia-placeholder { padding: 2rem; background: white; border-radius: 16px; border: 2px dashed var(--cream-dark); }
+        .galeria { padding: 4rem; background: white; }
+        .galeria-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+        .galeria-header h2 { font-size: 2.5rem; color: var(--charcoal); margin-bottom: 0.5rem; }
+        .galeria-header p { color: var(--brown-soft); }
+        .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .galeria-item { background: var(--cream); border-radius: 20px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .galeria-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(61, 54, 48, 0.15); }
+        .galeria-image { height: 250px; overflow: hidden; }
+        .galeria-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .galeria-item:hover .galeria-image img { transform: scale(1.05); }
+        .galeria-placeholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--cream-dark); color: var(--brown-soft); gap: 1rem; }
+        .galeria-placeholder svg { width: 50px; height: 50px; stroke: var(--brown-soft); opacity: 0.5; }
+        .galeria-info { padding: 1.5rem; text-align: center; }
+        .galeria-info h3 { font-size: 1.3rem; color: var(--charcoal); margin-bottom: 0.25rem; }
+        .galeria-info .codigo { font-size: 0.8rem; color: var(--brown-soft); font-family: monospace; }
+        .cta-section { padding: 5rem 4rem; background: linear-gradient(135deg, var(--charcoal), #2A2420); text-align: center; }
+        .cta-section h2 { font-size: 2.5rem; color: white; margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; font-size: 1.1rem; }
+        .btn-whatsapp { display: inline-flex; align-items: center; gap: 1rem; padding: 1.2rem 3rem; background: #25D366; color: white; border-radius: 50px; text-decoration: none; font-size: 1rem; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3); }
+        .btn-whatsapp:hover { background: #128C7E; transform: translateY(-4px); }
         .btn-whatsapp svg { width: 28px; height: 28px; fill: white; }
-
-        /* Footer */
-        footer {
-            background: #1A1614;
-            padding: 2rem 4rem;
-            text-align: center;
-        }
-
+        footer { background: #1A1614; padding: 2rem 4rem; text-align: center; }
         footer p { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
         footer a { color: var(--coral); text-decoration: none; }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .artesa-hero-content {
-                grid-template-columns: 1fr;
-                max-width: 600px;
-            }
-
-            .artesa-photo { height: 400px; }
-            .artesa-photo-container::after { display: none; }
-            nav { padding: 1rem 2rem; }
-            .biografia, .galeria { padding: 3rem 2rem; }
-            .galeria-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            .artesa-hero-content { padding: 0 2rem; }
-            .artesa-info h1 { font-size: 2.5rem; }
-            .galeria-grid { grid-template-columns: 1fr; max-width: 400px; }
-            .cta-section { padding: 3rem 2rem; }
-            .cta-section h2 { font-size: 2rem; }
-        }
+        @media (max-width: 1024px) { .artesa-hero-content { grid-template-columns: 1fr; max-width: 600px; } .artesa-photo { height: 400px; } .artesa-photo-container::after { display: none; } nav { padding: 1rem 2rem; } .biografia, .galeria { padding: 3rem 2rem; } .galeria-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .artesa-hero-content { padding: 0 2rem; } .artesa-info h1 { font-size: 2.5rem; } .galeria-grid { grid-template-columns: 1fr; max-width: 400px; } .cta-section { padding: 3rem 2rem; } .cta-section h2 { font-size: 2rem; } }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
     <nav>
-        <a href="index.html">
-            <img src="images/logo.jpg" alt="Begônia Arte em Presentes" class="logo">
-        </a>
+        <a href="index.html"><img src="images/logo.jpg" alt="Begônia Arte em Presentes" class="logo"></a>
         <a href="index.html#artesas" class="back-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Voltar para Artesãs
         </a>
     </nav>
 
-    <!-- Hero -->
     <section class="artesa-hero">
         <div class="artesa-hero-content">
             <div class="artesa-photo-container">
-                <div class="artesa-photo">
-                    <!-- Adicionar foto da Leila: <img src="images/leila.jpg" alt="Leila Pucci"> -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="8" r="4"/>
-                        <path d="M20 21a8 8 0 0 0-16 0"/>
-                    </svg>
-                </div>
+                <div class="artesa-photo"><img src="images/leila.jpg" alt="Leila Pucci"></div>
             </div>
-            
             <div class="artesa-info">
                 <span class="artesa-badge">✦ Artesã Begônia ✦</span>
                 <h1>Leila Pucci</h1>
                 <p class="artesa-specialty">Pintura em Cerâmica</p>
-                
-                <div class="artesa-quote">
-                    <p>"Cada pincelada carrega um pedaço da minha alma e do amor que tenho pela arte."</p>
-                    <cite>— Leila Pucci</cite>
-                </div>
+                <div class="artesa-quote"><p>"Transformo barro em poesia — cada peça nasce das minhas mãos, mas ganha vida nas histórias de quem a acolhe."</p><cite>— Leila Pucci</cite></div>
             </div>
         </div>
     </section>
 
-    <!-- Biography -->
     <section class="biografia">
         <div class="biografia-section">
-            <h2>
-                <span class="icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                </span>
-                Como Comecei na Arte
-            </h2>
-            <div class="biografia-placeholder">
-                <p>Espaço para Leila contar sua história de como começou no artesanato. Quando descobriu o amor pela cerâmica? Quem a inspirou?</p>
-            </div>
+            <h2><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>Como Comecei na Arte</h2>
+            <div class="biografia-placeholder">Desde pequena, sempre encontrei um refúgio nas coisas feitas à mão. A cerâmica chegou para mim como um encontro — desses que transformam a vida. Comecei como curiosidade, depois virou terapia, e quando percebi… já era paixão. O barro me escolheu antes mesmo que eu soubesse escolher um caminho.
+
+Criar com as mãos me devolveu para mim mesma, para minha essência. A cada peça, descobri que não estava apenas modelando argila — estava moldando também uma nova versão da minha história.</div>
         </div>
-        
         <div class="biografia-section">
-            <h2>
-                <span class="icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                    </svg>
-                </span>
-                Minha Técnica e Inspiração
-            </h2>
-            <div class="biografia-placeholder">
-                <p>Espaço para descrever as técnicas, materiais preferidos e de onde vem a inspiração criativa.</p>
-            </div>
+            <h2><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>Minha Técnica e Inspiração</h2>
+            <div class="biografia-placeholder">Meu processo mistura técnica tradicional brasileira, pintura manual e uma forte inspiração na natureza — nos ramos, flores, folhas e curvas orgânicas que fazem parte do universo Begônia. Trabalho com modelagem à mão, escultura livre e pintura em pincel fino, sempre respeitando o tempo da cerâmica: secar, lapidar, pintar, queimar…
+
+Acredito em peças únicas, com identidade, que carregam pequenas imperfeições que as tornam ainda mais humanas. Assim como acontece nas coleções da Begônia, onde cada detalhe é pintado com intenção e cuidado</div>
         </div>
-        
         <div class="biografia-section">
-            <h2>
-                <span class="icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                </span>
-                O Que a Begônia Representa
-            </h2>
-            <div class="biografia-placeholder">
-                <p>Espaço para compartilhar o que significa fazer parte da família Begônia.</p>
-            </div>
+            <h2><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>O Que a Begônia Representa</h2>
+            <div class="biografia-placeholder">A Begônia não é apenas minha loja — é o meu lar artístico.
+É o lugar onde minhas mãos encontram liberdade e onde minhas ideias ganham forma. Aqui, construí mais do que um negócio: construí uma família criativa.
+
+A Begônia representa acolhimento, crescimento e a certeza de que a arte feita com amor alcança pessoas. Cada peça vendida, cada encomenda entregue, cada cliente encantado… tudo isso me faz sentir que estou exatamente onde deveria estar.
+
+É minha raiz e meu florescer.</div>
         </div>
     </section>
 
-    <!-- Gallery -->
     <section class="galeria">
         <div class="galeria-header">
             <h2>🎨 Peças Criadas por Leila</h2>
             <p>Conheça as criações únicas desta artesã talentosa</p>
         </div>
-        
         <div class="galeria-grid">
-            <div class="galeria-item">
-                <div class="galeria-image">
-                    <div class="galeria-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                        <span>Foto do Produto</span>
+                    <div class="galeria-item">
+                        <div class="galeria-image">
+                            <div class="galeria-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <path d="M21 15l-5-5L5 21"/>
+                                </svg>
+                                <span>Foto do Produto</span>
+                            </div>
+                        </div>
+                        <div class="galeria-info">
+                            <h3>Nome da Peça</h3>
+                            <span class="codigo">BAP-XXX</span>
+                        </div>
                     </div>
-                </div>
-                <div class="galeria-info">
-                    <h3>Nome da Peça</h3>
-                    <span class="codigo">BAP-XXX</span>
-                </div>
-            </div>
-            
-            <div class="galeria-item">
-                <div class="galeria-image">
-                    <div class="galeria-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                        <span>Foto do Produto</span>
+                    <div class="galeria-item">
+                        <div class="galeria-image">
+                            <div class="galeria-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <path d="M21 15l-5-5L5 21"/>
+                                </svg>
+                                <span>Foto do Produto</span>
+                            </div>
+                        </div>
+                        <div class="galeria-info">
+                            <h3>Nome da Peça</h3>
+                            <span class="codigo">BAP-XXX</span>
+                        </div>
                     </div>
-                </div>
-                <div class="galeria-info">
-                    <h3>Nome da Peça</h3>
-                    <span class="codigo">BAP-XXX</span>
-                </div>
-            </div>
-            
-            <div class="galeria-item">
-                <div class="galeria-image">
-                    <div class="galeria-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                        <span>Foto do Produto</span>
-                    </div>
-                </div>
-                <div class="galeria-info">
-                    <h3>Nome da Peça</h3>
-                    <span class="codigo">BAP-XXX</span>
-                </div>
-            </div>
-        </div>
+                    <div class="galeria-item">
+                        <div class="galeria-image">
+                            <div class="galeria-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <path d="M21 15l-5-5L5 21"/>
+                                </svg>
+                                <span>Foto do Produto</span>
+                            </div>
+                        </div>
+                        <div class="galeria-info">
+                            <h3>Nome da Peça</h3>
+                            <span class="codigo">BAP-XXX</span>
+                        </div>
+                    </div></div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section">
         <h2>Encantou-se com as criações de Leila?</h2>
         <p>Entre em contato para adquirir uma peça única ou encomendar algo especial</p>
@@ -567,10 +193,6 @@
         </a>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Begônia Arte em Presentes. Feito com 🧡 no Brasil.</p>
-    </footer>
-
+    <footer><p>© 2024 Begônia Arte em Presentes. Feito com 🧡 no Brasil.</p></footer>
 </body>
 </html>
