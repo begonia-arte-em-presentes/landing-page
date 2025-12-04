@@ -662,7 +662,7 @@
 
     <!-- Load ProductManager -->
     <script src="product-manager.js"></script>
-    
+
     <script>
         // Pagination settings
         const PRODUCTS_PER_PAGE = 6;
@@ -683,10 +683,10 @@
         // Initialize
         async function init() {
             await ProductManager.init();
-            
+
             allProducts = ProductManager.getAllWithDestaque();
             totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
-            
+
             totalCountEl.textContent = allProducts.length;
             totalPagesEl.textContent = totalPages;
             renderProducts();

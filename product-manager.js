@@ -16,11 +16,11 @@ const ProductManager = {
         try {
             const response = await fetch('produtos.json');
             const data = await response.json();
-            
+
             this.destaque = data.destaque;
             this.produtos = data.produtos;
             this._loaded = true;
-            
+
             console.log('✅ ProductManager: carregou', this.produtos.length + 1, 'produtos de produtos.json');
         } catch (error) {
             console.error('❌ ProductManager: erro ao carregar produtos.json', error);
