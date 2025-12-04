@@ -570,122 +570,40 @@
         <p>© 2024 Begônia Arte em Presentes. Todos os direitos reservados. Feito com 🧡 no Brasil.</p>
     </footer>
 
+    <!-- Load ProductManager -->
+    <script src="product-manager.js"></script>
+    
     <script>
-        // Product data structure - This will be populated from URL parameters or localStorage
-        const products = {
-            'BAP-002': {
-                code: 'BAP-002',
-                title: 'Coleção Oliveira',
-                shortDescription: 'Conjunto de cerâmicas com folhas azuis e oliveiras, pintado à mão com técnicas tradicionais brasileiras.',
-                description: `Cada peça desta coleção é cuidadosamente pintada à mão por nossas artesãs brasileiras, utilizando técnicas ancestrais transmitidas de geração em geração. O processo de criação leva dias, desde a modelagem da argila até a queima final, garantindo uma peça única e durável.
-
-As folhas de oliveira representam paz e prosperidade, trazendo um significado especial para sua casa. Os tons de azul e verde criam uma harmonia visual que complementa qualquer ambiente.
-
-Feita com cerâmica de alta qualidade e esmaltes atóxicos, esta peça não é apenas decorativa, mas também funcional, podendo ser utilizada no dia a dia com segurança.`,
-                images: [
-                    'images/produto-1.jpg'
-                ]
-            },
-            'BAP-003': {
-                code: 'BAP-003',
-                title: 'Descansos de Colher',
-                shortDescription: 'Descansos de colher pintados à mão com motivos florais delicados e cores vibrantes.',
-                description: `Estes encantadores descansos de colher são perfeitos para adicionar um toque artesanal à sua cozinha. Cada peça é única, pintada à mão com motivos florais que celebram a natureza brasileira.
-
-Além de funcionais, estes descansos são verdadeiras obras de arte que transformam sua mesa em um espaço mais acolhedor e especial. Podem ser usados diariamente ou em ocasiões especiais.
-
-Produzidos com cerâmica de alta qualidade, são resistentes e fáceis de limpar, mantendo suas cores vibrantes por muitos anos.`,
-                images: [
-                    'images/produto-2.jpg'
-                ]
-            },
-            'BAP-004': {
-                code: 'BAP-004',
-                title: 'Conjunto Rosas',
-                shortDescription: 'Prato e bowl com rosas em espiral, uma celebração da beleza e delicadeza das flores.',
-                description: `Este conjunto exclusivo apresenta rosas pintadas em espiral, criando um efeito visual hipnotizante e elegante. Cada rosa é cuidadosamente desenhada à mão, com atenção aos mínimos detalhes.
-
-Perfeito para servir refeições especiais ou como peça decorativa, este conjunto traz sofisticação e charme para qualquer ocasião. As cores suaves e harmoniosas criam uma atmosfera de tranquilidade e beleza.
-
-Feito com cerâmica premium e acabamento impecável, este conjunto é um investimento em arte e qualidade que durará gerações.`,
-                images: [
-                    'images/produto-3.jpg'
-                ]
-            },
-            'BAP-005': {
-                code: 'BAP-005',
-                title: 'Tábua Folhagens',
-                shortDescription: 'Tábua de servir com folhagens pintadas à mão, ideal para apresentações elegantes.',
-                description: `Esta tábua de servir é uma verdadeira obra de arte funcional. As folhagens pintadas à mão criam um padrão orgânico e natural que celebra a flora brasileira.
-
-Ideal para servir queijos, frios, frutas ou como peça decorativa na sua cozinha. Cada folha é pintada com precisão e cuidado, criando uma composição harmoniosa e equilibrada.
-
-A cerâmica de alta qualidade garante durabilidade e facilidade de limpeza, enquanto o design atemporal assegura que esta peça nunca sairá de moda.`,
-                images: [
-                    'images/produto-4.jpg'
-                ]
-            },
-            'BAP-006': {
-                code: 'BAP-006',
-                title: 'Bowls Ramos Vermelhos',
-                shortDescription: 'Bowls decorados com ramos vermelhos vibrantes, trazendo energia e vida para sua mesa.',
-                description: `Estes bowls impressionantes apresentam ramos vermelhos pintados à mão que trazem energia e vitalidade para qualquer ambiente. O vermelho vibrante contrasta lindamente com o fundo claro da cerâmica.
-
-Perfeitos para servir sopas, saladas, cereais ou como peças decorativas. O design ousado e moderno se adapta tanto a ambientes contemporâneos quanto tradicionais.
-
-Cada bowl é uma peça única, com variações naturais que tornam sua coleção ainda mais especial. Feitos com cerâmica de primeira qualidade e esmaltes duráveis.`,
-                images: [
-                    'images/produto-5.jpg'
-                ]
-            },
-            'BAP-007': {
-                code: 'BAP-007',
-                title: 'Travessa Floral',
-                shortDescription: 'Travessa orgânica com flores delicadas, perfeita para ocasiões especiais.',
-                description: `Esta travessa de formato orgânico é adornada com flores delicadas pintadas à mão, criando uma peça verdadeiramente especial. O design fluido e natural complementa qualquer estilo de decoração.
-
-Ideal para servir entradas, acompanhamentos ou como centro de mesa decorativo. As flores pintadas com maestria trazem um toque de elegância e sofisticação.
-
-Produzida com cerâmica de alta qualidade, esta travessa combina beleza estética com funcionalidade prática, sendo resistente e fácil de manter.`,
-                images: [
-                    'images/produto-6.jpg'
-                ]
-            }
-        };
-
-        // Get product code from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
-        const productCode = urlParams.get('produto') || 'BAP-002';
+        const productCode = urlParams.get('produto') || 'BAP-DM-001';
 
-        // Load product data
-        function loadProduct() {
-            const product = products[productCode];
+        async function loadProduct() {
+            await ProductManager.init();
+            
+            const product = ProductManager.getByCode(productCode);
+            
             if (!product) {
-                // Redirect to home if product not found
                 window.location.href = 'index.html';
                 return;
             }
 
-            // Update page content
             document.getElementById('product-code').textContent = product.code;
             document.getElementById('product-title').textContent = product.title;
             document.getElementById('product-short-description').textContent = product.shortDescription;
-            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('product-description').textContent = product.longDescription || product.shortDescription;
             document.getElementById('breadcrumb-title').textContent = product.title;
             document.title = `${product.title} | Begônia Arte e Presentes`;
 
-            // Load images
             const mainImage = document.getElementById('main-image');
             const thumbnailGrid = document.getElementById('thumbnail-grid');
+            const imagePaths = ProductManager.getAllImagePaths(product);
 
-            if (product.images && product.images.length > 0) {
-                // Set main image
-                mainImage.src = product.images[0];
+            if (imagePaths && imagePaths.length > 0) {
+                mainImage.src = imagePaths[0];
                 mainImage.alt = product.title;
 
-                // Create thumbnails (up to 8 images)
                 thumbnailGrid.innerHTML = '';
-                product.images.slice(0, 8).forEach((imageSrc, index) => {
+                imagePaths.slice(0, 8).forEach((imageSrc, index) => {
                     const thumbnail = document.createElement('div');
                     thumbnail.className = 'thumbnail' + (index === 0 ? ' active' : '');
                     thumbnail.innerHTML = `<img src="${imageSrc}" alt="${product.title} - Imagem ${index + 1}">`;
@@ -699,10 +617,8 @@ Produzida com cerâmica de alta qualidade, esta travessa combina beleza estétic
             }
         }
 
-        // Initialize page
-        loadProduct();
+        document.addEventListener('DOMContentLoaded', loadProduct);
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

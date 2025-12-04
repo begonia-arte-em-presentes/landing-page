@@ -660,67 +660,15 @@
         <p>© 2024 Begônia Arte em Presentes. Todos os direitos reservados. Feito com 🧡 no Brasil.</p>
     </footer>
 
+    <!-- Load ProductManager -->
+    <script src="product-manager.js"></script>
+    
     <script>
-        // Product database - In a real application, this would come from a backend API
-        const allProducts = [
-            {
-                code: 'BAP-002',
-                title: 'Coleção Oliveira',
-                image: 'images/produto-1.jpg',
-                badge: '✨ Popular'
-            },
-            {
-                code: 'BAP-003',
-                title: 'Descansos de Colher',
-                image: 'images/produto-2.jpg',
-                badge: '🌟 Novo'
-            },
-            {
-                code: 'BAP-004',
-                title: 'Conjunto Rosas',
-                image: 'images/produto-3.jpg',
-                badge: '💝 Exclusivo'
-            },
-            {
-                code: 'BAP-005',
-                title: 'Tábua Folhagens',
-                image: 'images/produto-4.jpg',
-                badge: '✨ Popular'
-            },
-            {
-                code: 'BAP-006',
-                title: 'Bowls Ramos Vermelhos',
-                image: 'images/produto-5.jpg',
-                badge: '🌟 Novo'
-            },
-            {
-                code: 'BAP-007',
-                title: 'Travessa Floral',
-                image: 'images/produto-6.jpg',
-                badge: '💝 Exclusivo'
-            },
-            // Add more products here as needed
-            // Example of how to add more products:
-            /*
-            {
-                code: 'BAP-008',
-                title: 'Conjunto Jardim Secreto',
-                image: 'images/produto-8.jpg',
-                badge: '✨ Popular'
-            },
-            {
-                code: 'BAP-009',
-                title: 'Pratos Decorativos',
-                image: 'images/produto-9.jpg',
-                badge: '🌟 Novo'
-            },
-            */
-        ];
-
         // Pagination settings
         const PRODUCTS_PER_PAGE = 6;
         let currentPage = 1;
-        let totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
+        let allProducts = [];
+        let totalPages = 1;
 
         // DOM elements
         const container = document.getElementById('produtos-container');
@@ -733,7 +681,12 @@
         const totalCountEl = document.getElementById('total-count');
 
         // Initialize
-        function init() {
+        async function init() {
+            await ProductManager.init();
+            
+            allProducts = ProductManager.getAllWithDestaque();
+            totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
+            
             totalCountEl.textContent = allProducts.length;
             totalPagesEl.textContent = totalPages;
             renderProducts();
@@ -749,7 +702,7 @@
             if (productsToShow.length === 0) {
                 container.innerHTML = `
                     <div class="empty-state">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <line x1="12" y1="8" x2="12" y2="12"/>
                             <line x1="12" y1="16" x2="12.01" y2="16"/>
@@ -763,7 +716,6 @@
                 return;
             }
 
-            // Create grid
             const grid = document.createElement('div');
             grid.className = 'produtos-grid';
 
@@ -776,7 +728,7 @@
                 card.innerHTML = `
                     <div class="produto-image">
                         ${product.badge ? `<span class="produto-badge">${product.badge}</span>` : ''}
-                        <img src="${product.image}" alt="${product.title}">
+                        <img src="${ProductManager.getImagePath(product)}" alt="${product.title}">
                     </div>
                     <div class="produto-info">
                         <h3>${product.title}</h3>
@@ -793,25 +745,18 @@
             container.innerHTML = '';
             container.appendChild(grid);
 
-            // Update showing count
             const showing = Math.min(endIndex, allProducts.length);
             showingCountEl.textContent = showing;
-
-            // Show pagination if needed
             pagination.style.display = totalPages > 1 ? 'flex' : 'none';
-
-            // Scroll to top smoothly
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Update pagination buttons
         function updatePagination() {
             currentPageEl.textContent = currentPage;
             prevBtn.disabled = currentPage === 1;
             nextBtn.disabled = currentPage === totalPages;
         }
 
-        // Event listeners
         prevBtn.addEventListener('click', () => {
             if (currentPage > 1) {
                 currentPage--;
@@ -828,17 +773,12 @@
             }
         });
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' && !prevBtn.disabled) {
-                prevBtn.click();
-            } else if (e.key === 'ArrowRight' && !nextBtn.disabled) {
-                nextBtn.click();
-            }
+            if (e.key === 'ArrowLeft' && !prevBtn.disabled) prevBtn.click();
+            else if (e.key === 'ArrowRight' && !nextBtn.disabled) nextBtn.click();
         });
 
-        // Initialize on load
-        setTimeout(init, 500); // Simulate loading delay
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 

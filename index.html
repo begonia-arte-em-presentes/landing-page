@@ -1236,72 +1236,8 @@
             <p>Peças selecionadas que conquistaram os corações dos nossos clientes</p>
         </div>
 
-        <div class="produtos-grid">
-            <div class="produto-card" data-produto="BAP-002">
-                <div class="produto-image">
-                    <img src="images/produto-1.jpg" alt="Conjunto de cerâmicas com folhas azuis e oliveiras">
-                </div>
-                <div class="produto-info">
-                    <h3>Coleção Oliveira</h3>
-                    <span class="codigo">BAP-002</span>
-                </div>
-                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-002">Ver Detalhes</a></div>
-            </div>
-
-            <div class="produto-card" data-produto="BAP-003">
-                <div class="produto-image">
-                    <img src="images/produto-2.jpg" alt="Descansos de colher pintados à mão">
-                </div>
-                <div class="produto-info">
-                    <h3>Descansos de Colher</h3>
-                    <span class="codigo">BAP-003</span>
-                </div>
-                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-003">Ver Detalhes</a></div>
-            </div>
-
-            <div class="produto-card" data-produto="BAP-004">
-                <div class="produto-image">
-                    <img src="images/produto-3.jpg" alt="Prato e bowl com rosas em espiral">
-                </div>
-                <div class="produto-info">
-                    <h3>Conjunto Rosas</h3>
-                    <span class="codigo">BAP-004</span>
-                </div>
-                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-004">Ver Detalhes</a></div>
-            </div>
-
-            <div class="produto-card" data-produto="BAP-005">
-                <div class="produto-image">
-                    <img src="images/produto-4.jpg" alt="Tábua de servir com folhagens">
-                </div>
-                <div class="produto-info">
-                    <h3>Tábua Folhagens</h3>
-                    <span class="codigo">BAP-005</span>
-                </div>
-                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-005">Ver Detalhes</a></div>
-            </div>
-
-            <div class="produto-card" data-produto="BAP-006">
-                <div class="produto-image">
-                    <img src="images/produto-5.jpg" alt="Bowls com ramos vermelhos">
-                </div>
-                <div class="produto-info">
-                    <h3>Bowls Ramos Vermelhos</h3>
-                    <span class="codigo">BAP-006</span>
-                </div>
-                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-006">Ver Detalhes</a></div>
-            </div>
-
-            <div class="produto-card" data-produto="BAP-007">
-                <div class="produto-image">
-                    <img src="images/produto-6.jpg" alt="Travessa orgânica com flores">
-                </div>
-                <div class="produto-info">
-                    <h3>Travessa Floral</h3>
-                    <span class="codigo">BAP-007</span>
-                </div>
-                <div class="produto-overlay"><a href="detalhes.html?produto=BAP-007">Ver Detalhes</a></div>
-            </div>
+        <div class="produtos-grid" id="produtos-grid">
+            <!-- Carregado de produtos.json -->
         </div>
 
         <div class="vitrine-cta">
@@ -1323,40 +1259,8 @@
             <p>Conheça as artesãs por trás de cada peça única</p>
         </div>
 
-        <div class="artesas-grid">
-            <a href="artesa-leila.html" class="artesa-card">
-                <div class="artesa-image">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="8" r="4" />
-                        <path d="M20 21a8 8 0 0 0-16 0" />
-                    </svg>
-                </div>
-                <h4>Leila Pucci</h4>
-                <span>Pintura em Cerâmica</span>
-            </a>
-
-            <a href="artesa-estela.html" class="artesa-card">
-                <div class="artesa-image" style="background: linear-gradient(135deg, var(--teal), var(--teal-light));">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="8" r="4" />
-                        <path d="M20 21a8 8 0 0 0-16 0" />
-                    </svg>
-                </div>
-                <h4>Maria Estela de Sá</h4>
-                <span>Pintura em Cerâmica</span>
-            </a>
-
-            <a href="artesa-susi.html" class="artesa-card">
-                <div class="artesa-image"
-                    style="background: linear-gradient(135deg, var(--olive), var(--olive-light));">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="8" r="4" />
-                        <path d="M20 21a8 8 0 0 0-16 0" />
-                    </svg>
-                </div>
-                <h4>Susi Zanardo</h4>
-                <span>Pintura em Cerâmica</span>
-            </a>
+        <div class="artesas-grid" id="artesas-grid">
+            <!-- Carregado de artesas.json -->
         </div>
     </section>
 
@@ -1418,7 +1322,114 @@
         <p>© 2024 Begônia Arte em Presentes. Todos os direitos reservados. Feito com 🧡 no Brasil.</p>
     </footer>
 
+    <!-- Load Managers -->
+    <script src="product-manager.js"></script>
+    <script src="artesa-manager.js"></script>
+    
     <script>
+        // ==========================================
+        // RENDERIZAÇÃO DINÂMICA
+        // ==========================================
+
+        function renderDestaque() {
+            const container = document.getElementById('destaque-content');
+            if (!container) return;
+
+            const destaque = ProductManager.getDestaque();
+            if (!destaque) return;
+
+            const firstParagraph = destaque.longDescription.split('
+
+')[0];
+
+            container.innerHTML = `
+                <div class="destaque-image">
+                    <div class="destaque-image-main">
+                        <span class="destaque-badge">${destaque.badge}</span>
+                        <img src="${ProductManager.getImagePath(destaque)}" alt="${destaque.title}">
+                    </div>
+                </div>
+                <div class="destaque-info">
+                    <span class="destaque-code">${destaque.code}</span>
+                    <h3>${destaque.title}</h3>
+                    <p class="destaque-description">"${destaque.shortDescription}"</p>
+                    <div class="destaque-story">
+                        <h4>📖 A História Por Trás da Peça</h4>
+                        <p>${firstParagraph}</p>
+                    </div>
+                    <a href="detalhes.html?produto=${destaque.code}" class="btn-primary">
+                        Quero Este Presente Único
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            `;
+        }
+
+        function renderProdutos() {
+            const container = document.getElementById('produtos-grid');
+            if (!container) return;
+
+            const produtos = ProductManager.getVitrine(6);
+
+            container.innerHTML = produtos.map(produto => `
+                <div class="produto-card" data-produto="${produto.code}">
+                    <div class="produto-image">
+                        <img src="${ProductManager.getImagePath(produto)}" alt="${produto.title}">
+                    </div>
+                    <div class="produto-info">
+                        <h3>${produto.title}</h3>
+                        <span class="codigo">${produto.code}</span>
+                    </div>
+                    <div class="produto-overlay">
+                        <a href="detalhes.html?produto=${produto.code}">Ver Detalhes</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderArtesas() {
+            const container = document.getElementById('artesas-grid');
+            if (!container) return;
+
+            const artesas = ArtesaManager.getAll();
+
+            container.innerHTML = artesas.map(artesa => `
+                <a href="artesa.html?id=${artesa.id}" class="artesa-card">
+                    <div class="artesa-image" style="background: ${ArtesaManager.getGradient(artesa)};">
+                        ${artesa.foto ? 
+                            `<img src="${ArtesaManager.getImagePath(artesa)}" alt="${artesa.nome}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none;">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M20 21a8 8 0 0 0-16 0" />
+                             </svg>` 
+                            : ArtesaManager.getPlaceholderSVG()
+                        }
+                    </div>
+                    <h4>${artesa.nome}</h4>
+                    <span>${artesa.especialidade}</span>
+                </a>
+            `).join('');
+        }
+
+        // ==========================================
+        // INICIALIZAÇÃO
+        // ==========================================
+
+        async function initPage() {
+            // Carregar dados dos JSONs
+            await Promise.all([
+                ProductManager.init(),
+                ArtesaManager.init()
+            ]);
+
+            // Renderizar conteúdo
+            renderDestaque();
+            renderProdutos();
+            renderArtesas();
+        }
+
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1450,7 +1461,11 @@
             section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             observer.observe(section);
         });
+
+        // Iniciar quando DOM estiver pronto
+        document.addEventListener('DOMContentLoaded', initPage);
     </script>
+
 </body>
 
 </html>
